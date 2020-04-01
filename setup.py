@@ -33,7 +33,7 @@ setup(
     packages=["LambdaDataTests"],
     author="Robert Sharp",
     author_email="webmaster@sharpdesigndigital.com",
-    requires=["Cython"],
+    install_requires=["Cython"],
     version="0.1.3",
     description="Data Science Algorithm Library",
     long_description=long_description,
