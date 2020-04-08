@@ -34,7 +34,7 @@ setup(
     author="Robert Sharp",
     author_email="webmaster@sharpdesigndigital.com",
     install_requires=["Cython", 'pandas'],
-    version="0.1.6",
+    version="0.1.7",
     description="Data Science Algorithm Library",
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -42,7 +42,7 @@ setup(
     platforms=["Darwin", "Linux"],
     classifiers=[
         dev_status["Beta"],
-        "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3.7",
         "Programming Language :: Cython",
         "Topic :: Software Development :: Libraries :: Python Modules",
     ],
@@ -54,7 +54,8 @@ setup(
         'partial_sum', 'partition', 'product', 'reduce', 'star_sum',
         'star_product', 'symmetric_difference', 'transform', 'transform_reduce',
         'transposed_sums', 'union', 'zip_transform', 'matrix_multiply'
-        'value_span', 'star_cat_row', 'star_cat_col',
+        'value_span', 'star_cat_row', 'star_cat_col', 'random_range',
+        'shuffle', 'TruffleShuffle'
     ],
     python_requires='>=3.6',
 )
