@@ -34,7 +34,7 @@ setup(
     author="Robert Sharp",
     author_email="webmaster@sharpdesigndigital.com",
     install_requires=["Cython", 'pandas'],
-    version="0.1.5",
+    version="0.1.6",
     description="Data Science Algorithm Library",
     long_description=long_description,
     long_description_content_type="text/markdown",

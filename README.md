@@ -47,7 +47,11 @@ Data Science Utility Library
     - value_span
     - star_cat_row
     - star_cat_col
-    
+- Randomizers
+    - random_range
+    - shuffle
+    - TruffleShuffle
+
 ---
 
 ## Generators
