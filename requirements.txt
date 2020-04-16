@@ -1,0 +1,6 @@
+Cython
+LambdaData
+scikit-learn
+category_encoders
+pandas
+setuptools

@@ -1,6 +1,6 @@
 # LambdaData
 
-Data Science Utility Library
+Data Science Utilities
 
 
 ### Tests
@@ -8,6 +8,8 @@ Data Science Utility Library
 - All tests passing
 
 ## Table of Contents:
+- Smart DataFrame
+    - Matrix
 - Generators
     - iota
     - generate
