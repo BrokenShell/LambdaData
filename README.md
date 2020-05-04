@@ -51,7 +51,7 @@ Data Science Utilities
     - star_cat_col
 - Randomizers
     - random_range
-    - shuffle
+    - shuffle: Knuth_B
     - TruffleShuffle
 
 ---
