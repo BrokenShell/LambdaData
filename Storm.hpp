@@ -3,8 +3,11 @@
 #include <cmath>
 #include <random>
 
+// This is an excerpt from the Storm library: https://github.com/BrokenShell/Storm
+
 
 namespace Storm {
+
     using Integer = long long;
 
     namespace Engine {
