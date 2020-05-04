@@ -1,6 +1,6 @@
 # LambdaData
 
-Data Science Utilities
+Lambda Data Science Iterator Utility Library by Robert Sharp
 
 
 ### Tests
@@ -49,7 +49,7 @@ Data Science Utilities
     - value_span
     - star_cat_row
     - star_cat_col
-- Randomizers
+- Random Utilities (Fortuna)
     - random_range
     - shuffle: Knuth_B
     - TruffleShuffle
@@ -104,7 +104,7 @@ generate(...)
        @param kwargs: Keyword arguments for the functor.
 
 ```
-### Generate_N
+### Generate N
 ```
 Help on built-in function generate_n in module LambdaData:
 
@@ -151,7 +151,7 @@ fork(...)
        @return: Tuple of N Iterators where N is the number of forks.
 
 ```
-### Inclusive_Scan
+### Inclusive Scan
 ```
 Help on built-in function inclusive_scan in module LambdaData:
 
@@ -170,7 +170,7 @@ inclusive_scan(...)
        @return: Iterator of Pairs.
 
 ```
-### Exclusive_Scan
+### Exclusive Scan
 ```
 Help on built-in function exclusive_scan in module LambdaData:
 
@@ -191,7 +191,7 @@ exclusive_scan(...)
 
 ```
 
-## Transforms
+## Iterative Transformations
 
 ### Transform
 ```
@@ -200,7 +200,7 @@ Help on built-in function transform in module LambdaData:
 transform(...)
     transform(array: Iterable, func: Callable) -> Iterator
     Transform
-       Similar to map but with a reversed signature.
+       Similar to map but with reversed signature.
     
        DocTests:
        >>> list(transform(range(10), add_one))
@@ -213,7 +213,7 @@ transform(...)
        @return: Iterator of transformed Values.
 
 ```
-### Adjacent_Difference
+### Adjacent Difference
 ```
 Help on built-in function adjacent_difference in module LambdaData:
 
@@ -236,7 +236,7 @@ adjacent_difference(...)
        @return: Iterator of adjacent differences.
 
 ```
-### Partial_Sum
+### Partial Sum
 ```
 Help on built-in function partial_sum in module LambdaData:
 
@@ -350,7 +350,7 @@ product(...)
        @return: Product of all elements multiplied together.
 
 ```
-### Min_Max
+### Min Max
 ```
 Help on built-in function min_max in module LambdaData:
 
@@ -368,7 +368,7 @@ min_max(...)
        @return: Tuple(Minimum, Maximum)
 
 ```
-### Star_Sum
+### Star Sum
 ```
 Help on built-in function star_sum in module LambdaData:
 
@@ -391,7 +391,7 @@ star_sum(...)
        @return: Sum of all arguments.
 
 ```
-### Star_Product
+### Star Product
 ```
 Help on built-in function star_product in module LambdaData:
 
@@ -414,8 +414,10 @@ star_product(...)
 ```
 
 ## Queries
+`all_of` and `any_of` are similar to the builtin functions `any` and `all` but with slightly different signatures.
+Also included here is the inverse query `none_of` for convenience.
 
-### All_Of
+### All Of
 ```
 Help on built-in function all_of in module LambdaData:
 
@@ -438,7 +440,7 @@ all_of(...)
        @return: Boolean.
 
 ```
-### Any_Of
+### Any Of
 ```
 Help on built-in function any_of in module LambdaData:
 
@@ -461,7 +463,7 @@ any_of(...)
        @return: Boolean.
 
 ```
-### None_Of
+### None Of
 ```
 Help on built-in function none_of in module LambdaData:
 
@@ -485,9 +487,9 @@ none_of(...)
 
 ```
 
-## Transform & Reduce
+## Transformation & Reduction
 
-### Transform_Reduce
+### Transform Reduce
 ```
 Help on built-in function transform_reduce in module LambdaData:
 
@@ -509,7 +511,7 @@ transform_reduce(...)
        @return: Reduced Value
 
 ```
-### Inner_Product
+### Inner Product
 ```
 Help on built-in function inner_product in module LambdaData:
 
@@ -530,7 +532,7 @@ inner_product(...)
        @return: Sum of the products.
 
 ```
-### Matrix_Multiply
+### Matrix Multiply
 ```
 Help on built-in function matrix_multiply in module LambdaData:
 
@@ -553,7 +555,7 @@ matrix_multiply(...)
 
 ## Multidimensional Reductions
 
-### Zip_Transform
+### Zip Transform
 ```
 Help on built-in function zip_transform in module LambdaData:
 
@@ -582,7 +584,7 @@ zip_transform(...)
        @return: Iterator of values from the transducer.
 
 ```
-### Transposed_Sums
+### Transposed Sums
 ```
 Help on built-in function transposed_sums in module LambdaData:
 
@@ -605,6 +607,8 @@ transposed_sums(...)
 ```
 
 ## Multi-Set Operations
+These are similar to the builtin methods of the same names, 
+but the ones contained here allow the operations across an unbounded number of sets.
 
 ### Union
 ```
@@ -670,7 +674,7 @@ difference(...)
        @return: Difference between the first set and the rest.
 
 ```
-### Symmetric_Difference
+### Symmetric Difference
 ```
 Help on built-in function symmetric_difference in module LambdaData:
 
@@ -696,7 +700,7 @@ symmetric_difference(...)
 
 ## Pandas Helpers
 
-### Value_Span
+### Value Span
 ```
 Help on built-in function value_span in module LambdaData:
 
@@ -711,7 +715,7 @@ value_span(...)
        @return: Conditional
 
 ```
-### Star_Cat_Row
+### Star Cat Row
 ```
 Help on built-in function star_cat_row in module LambdaData:
 
@@ -728,7 +732,7 @@ star_cat_row(...)
        @return: DataFrame
 
 ```
-### Star_Cat_Col
+### Star Cat Col
 ```
 Help on built-in function star_cat_col in module LambdaData:
 
@@ -746,9 +750,9 @@ star_cat_col(...)
 
 ```
 
-## Randomizers
+## Random Utilities (from Fortuna: https://github.com/BrokenShell/Fortuna)
 
-### Random_Range
+### Random Range
 ```
 Help on built-in function random_range in module LambdaData:
 
@@ -767,7 +771,7 @@ random_range(...)
        @return: Random Integer in range [A, B) by C, or (A, B] by |C| for -C
 
 ```
-### Shuffle
+### Shuffle: Knuth B Algorithm
 ```
 Help on built-in function shuffle in module LambdaData:
 
@@ -781,7 +785,7 @@ shuffle(...)
        @param array: List of values to be shuffled.
 
 ```
-### Truffleshuffle
+### TruffleShuffle
 ```
 Help on class TruffleShuffle in module LambdaData:
 
