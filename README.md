@@ -8,8 +8,6 @@ Lambda Data Science Iterator Utility Library by Robert Sharp
 - All tests passing
 
 ## Table of Contents:
-- Smart DataFrame
-    - Matrix
 - Generators
     - iota
     - generate
@@ -53,6 +51,8 @@ Lambda Data Science Iterator Utility Library by Robert Sharp
     - random_range
     - shuffle: Knuth_B
     - TruffleShuffle
+- Smart DataFrame (Work in progress)
+    - Matrix
 
 ---
 
@@ -826,7 +826,10 @@ class TruffleShuffle(builtins.object)
  |  rotate_size
 
 ```
-
+### Matrix (experimental)
+```
+Work in progress
+```
 
 ## Tests
 ```
