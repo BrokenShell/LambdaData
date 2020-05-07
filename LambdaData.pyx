@@ -9,6 +9,7 @@ from collections import deque
 from copy import deepcopy
 from typing import Callable, Iterator, Iterable, Any, List
 
+
 __all__ = (
     'accumulate', 'adjacent_difference', 'all_of', 'any_of', 'difference',
     'exclusive_scan', 'fork', 'generate', 'generate_n', 'inclusive_scan',
@@ -20,6 +21,7 @@ __all__ = (
     'random_range',
 )
 
+
 cdef extern from "Storm.hpp":
     long long   _random_int     "Storm::uniform_int_variate"(long long, long long)
     long long   _front_poisson  "Storm::front_poisson"(long long)
@@ -29,7 +31,11 @@ cdef extern from "Storm.hpp":
 def iota(start, *, stop=None, step=1, stride=0):
     """ Iota
     Iterator of a given range with grouping size equal to the stride.
-    If stride is zero - a single dimensional iterator is returned.
+    The stop parameter is exclusive, if none is provided the algorithm will
+        start at zero and use the start parameter as the exclusive stopping point.
+        This is the same behavior as Random.randrange()
+    If stride is zero - a single dimension iterator is returned.
+        Otherwise, stride controls the length of the inner sequences.
 
     DocTests:
     >>> list(iota(10))
@@ -48,6 +54,7 @@ def iota(start, *, stop=None, step=1, stride=0):
     """
     if stop is None:
         start, stop = 0, start
+
     if stride > 0:
         groups = [iter(range(start, stop, step))] * stride
         yield from zip(*groups)

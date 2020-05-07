@@ -26,16 +26,16 @@ setup(
             extra_compile_args=["-std=gnu++17"],
         ),
         compiler_directives={
-            'embedsignature': True,
-            'language_level': 3,
+            "embedsignature": True,
+            "language_level": 3,
         },
     ),
     packages=["LambdaDataTests"],
     author="Robert Sharp",
     author_email="webmaster@sharpdesigndigital.com",
-    install_requires=["Cython", 'pandas'],
-    version="0.1.7",
-    description="Data Science Algorithm Library",
+    install_requires=["pandas"],
+    version="0.1.8",
+    description="Data Science Iterator Algorithm Library",
     long_description=long_description,
     long_description_content_type="text/markdown",
     license="Free for non-commercial use",
@@ -48,14 +48,14 @@ setup(
     ],
     keywords=[
         "Lambda School", "Data Science Algorithm",
-        'accumulate', 'adjacent_difference', 'all_of', 'any_of', 'difference',
-        'exclusive_scan', 'fork', 'generate', 'generate_n', 'inclusive_scan',
-        'inner_product', 'intersection', 'iota', 'min_max', 'none_of',
-        'partial_sum', 'partition', 'product', 'reduce', 'star_sum',
-        'star_product', 'symmetric_difference', 'transform', 'transform_reduce',
-        'transposed_sums', 'union', 'zip_transform', 'matrix_multiply'
-        'value_span', 'star_cat_row', 'star_cat_col', 'random_range',
-        'shuffle', 'TruffleShuffle'
+        "accumulate", "adjacent_difference", "all_of", "any_of", "difference",
+        "exclusive_scan", "fork", "generate", "generate_n", "inclusive_scan",
+        "inner_product", "intersection", "iota", "min_max", "none_of",
+        "partial_sum", "partition", "product", "reduce", "star_sum",
+        "star_product", "symmetric_difference", "transform", "transform_reduce",
+        "transposed_sums", "union", "zip_transform", "matrix_multiply"
+        "value_span", "star_cat_row", "star_cat_col", "random_range",
+        "shuffle", "TruffleShuffle"
     ],
-    python_requires='>=3.6',
+    python_requires=">=3.6",
 )
