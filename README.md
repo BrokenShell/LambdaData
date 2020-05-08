@@ -3,9 +3,10 @@
 
 ## Lambda Data Science Iterator Utility Library
 
-### Tests
-- Test Coverage: 92%
-- All tests passing
+### Coverage
+- Doc Coverage: 99%
+- Test Coverage: 90%
+    - All tests passing
 
 ## Table of Contents:
 - Generators
@@ -47,6 +48,7 @@
     - value_span
     - star_cat_row
     - star_cat_col
+    - state_name_lookup
 - Random Utilities (Fortuna)
     - random_range
     - shuffle: Knuth_B

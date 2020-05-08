@@ -34,7 +34,7 @@ setup(
     author="Robert Sharp",
     author_email="webmaster@sharpdesigndigital.com",
     install_requires=["pandas"],
-    version="0.1.8",
+    version="0.1.9",
     description="Data Science Iterator Algorithm Library",
     long_description=long_description,
     long_description_content_type="text/markdown",
