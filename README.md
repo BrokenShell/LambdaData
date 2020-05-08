@@ -6,7 +6,7 @@
 ### Coverage
 - Doc Coverage: 99%
 - Test Coverage: 90%
-    - All tests passing
+    - All Tests Passing
 
 ## Table of Contents:
 - Generators
