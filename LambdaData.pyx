@@ -18,7 +18,7 @@ __all__ = (
     'symmetric_difference', 'transform', 'transform_reduce',
     'transposed_sums', 'union', 'zip_transform', 'matrix_multiply',
     'value_span', 'star_cat_row', 'star_cat_col', 'TruffleShuffle', 'shuffle',
-    'random_range',
+    'random_range', 'state_name_lookup',
 )
 
 
@@ -734,7 +734,7 @@ def random_range(start: int, stop: int = 0, step: int = 1) -> int:
     Negative stepping will flip the inclusively of the distribution.
     In other words: a negative step means to count down, not up.
 
-    DocTests
+    DocTests:
     >>> all(random_range(10) in range(10) for _ in range(100))
     True
     >>> all(random_range(1, 10) in range(1, 10) for _ in range(100))
@@ -860,11 +860,17 @@ _states = {
     'WY': 'Wyoming'
 }
 
-_abbreviations = {v: k for k, v in _states}
+_abbreviations = {v: k for k, v in _states.items()}
 
 
 def state_name_lookup(state_string: str, rev=False) -> str:
     """ State Name Lookup Utility
+
+    DocTests:
+    >>> state_name_lookup('CA')
+    'California'
+    >>> state_name_lookup('Texas', rev=True)
+    'TX'
 
     @param state_string: state abbreviation or name if rev == True
     @param rev: indicates a reverse lookup
@@ -872,7 +878,7 @@ def state_name_lookup(state_string: str, rev=False) -> str:
     """
     if not rev and state_string in _states.keys():
         return _states[state_string]
-    elif state_string in _abbreviations.keys():
+    elif rev and state_string in _abbreviations.keys():
         return _abbreviations[state_string]
     else:
         # raise KeyError

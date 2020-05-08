@@ -750,6 +750,25 @@ star_cat_col(...)
        @return: DataFrame
 
 ```
+### `LambdaData.state_name_lookup`
+```
+Help on built-in function state_name_lookup in module LambdaData:
+
+state_name_lookup(...)
+    state_name_lookup(unicode state_string: str, rev=False) -> str
+    State Name Lookup Utility
+    
+       DocTests:
+       >>> state_name_lookup('CA')
+       'California'
+       >>> state_name_lookup('Texas', rev=True)
+       'TX'
+    
+       @param state_string: state abbreviation or name if rev == True
+       @param rev: indicates a reverse lookup
+       @return string: state name or abbreviation if rev == True
+
+```
 
 ## Randomizers
 
@@ -766,7 +785,7 @@ random_range(...)
        Negative stepping will flip the inclusively of the distribution.
        In other words: a negative step means to count down, not up.
     
-       DocTests
+       DocTests:
        >>> all(random_range(10) in range(10) for _ in range(100))
        True
        >>> all(random_range(1, 10) in range(1, 10) for _ in range(100))
@@ -841,6 +860,7 @@ class TruffleShuffle(builtins.object)
 ```
 $ python LambdaDataTests/LDTests.py
 ```
+
 ```
 8 items had no tests:
     LambdaData
@@ -851,7 +871,7 @@ $ python LambdaDataTests/LDTests.py
     LambdaData.star_cat_col
     LambdaData.star_cat_row
     LambdaData.value_span
-66 items passed all tests:
+68 items passed all tests:
    2 tests in LambdaData.accumulate
    2 tests in LambdaData.add_one
    3 tests in LambdaData.adjacent_difference
@@ -879,13 +899,14 @@ $ python LambdaDataTests/LDTests.py
    3 tests in LambdaData.square
    3 tests in LambdaData.star_product
    4 tests in LambdaData.star_sum
+   2 tests in LambdaData.state_name_lookup
    4 tests in LambdaData.symmetric_difference
    2 tests in LambdaData.transform
    2 tests in LambdaData.transform_reduce
    4 tests in LambdaData.transposed_sums
    4 tests in LambdaData.union
    7 tests in LambdaData.zip_transform
-216 tests in 74 items.
-216 passed and 0 failed.
+220 tests in 76 items.
+220 passed and 0 failed.
 Test passed.
 ```

@@ -21,5 +21,5 @@ if __name__ == '__main__':
     get_help("Transform & Reduce", (transform_reduce, inner_product, matrix_multiply))
     get_help("Multidimensional Reductions", (zip_transform, transposed_sums))
     get_help("Multi-Set Operations", (union, intersection, difference, symmetric_difference))
-    get_help("Pandas Helpers", (value_span, star_cat_row, star_cat_col))
+    get_help("Pandas Helpers", (value_span, star_cat_row, star_cat_col, state_name_lookup))
     get_help("Randomizers", (random_range, shuffle, TruffleShuffle))
