@@ -4,7 +4,7 @@
 ## Lambda Data Science Iterator Utility Library
 
 ### Coverage
-- Doc Coverage: 99%
+- Doc Coverage: 100%
 - Test Coverage: 90%
     - All Tests Passing
 
