@@ -18,7 +18,7 @@ __all__ = (
     'symmetric_difference', 'transform', 'transform_reduce',
     'transposed_sums', 'union', 'zip_transform', 'matrix_multiply',
     'value_span', 'star_cat_row', 'star_cat_col', 'TruffleShuffle', 'shuffle',
-    'random_range', 'state_name_lookup',
+    'random_range', 'StateLookup',
 )
 
 
@@ -799,87 +799,91 @@ class TruffleShuffle:
 
 
 
+class StateLookup:
+    states = {
+        'AK': 'Alaska',
+        'AL': 'Alabama',
+        'AR': 'Arkansas',
+        'AS': 'American Samoa',
+        'AZ': 'Arizona',
+        'CA': 'California',
+        'CO': 'Colorado',
+        'CT': 'Connecticut',
+        'DC': 'District of Columbia',
+        'DE': 'Delaware',
+        'FL': 'Florida',
+        'GA': 'Georgia',
+        'GU': 'Guam',
+        'HI': 'Hawaii',
+        'IA': 'Iowa',
+        'ID': 'Idaho',
+        'IL': 'Illinois',
+        'IN': 'Indiana',
+        'KS': 'Kansas',
+        'KY': 'Kentucky',
+        'LA': 'Louisiana',
+        'MA': 'Massachusetts',
+        'MD': 'Maryland',
+        'ME': 'Maine',
+        'MI': 'Michigan',
+        'MN': 'Minnesota',
+        'MO': 'Missouri',
+        'MP': 'Northern Mariana Islands',
+        'MS': 'Mississippi',
+        'MT': 'Montana',
+        'NA': 'National',
+        'NC': 'North Carolina',
+        'ND': 'North Dakota',
+        'NE': 'Nebraska',
+        'NH': 'New Hampshire',
+        'NJ': 'New Jersey',
+        'NM': 'New Mexico',
+        'NV': 'Nevada',
+        'NY': 'New York',
+        'OH': 'Ohio',
+        'OK': 'Oklahoma',
+        'OR': 'Oregon',
+        'PA': 'Pennsylvania',
+        'PR': 'Puerto Rico',
+        'RI': 'Rhode Island',
+        'SC': 'South Carolina',
+        'SD': 'South Dakota',
+        'TN': 'Tennessee',
+        'TX': 'Texas',
+        'UT': 'Utah',
+        'VA': 'Virginia',
+        'VI': 'Virgin Islands',
+        'VT': 'Vermont',
+        'WA': 'Washington',
+        'WI': 'Wisconsin',
+        'WV': 'West Virginia',
+        'WY': 'Wyoming'
+    }
 
-_states = {
-    'AK': 'Alaska',
-    'AL': 'Alabama',
-    'AR': 'Arkansas',
-    'AS': 'American Samoa',
-    'AZ': 'Arizona',
-    'CA': 'California',
-    'CO': 'Colorado',
-    'CT': 'Connecticut',
-    'DC': 'District of Columbia',
-    'DE': 'Delaware',
-    'FL': 'Florida',
-    'GA': 'Georgia',
-    'GU': 'Guam',
-    'HI': 'Hawaii',
-    'IA': 'Iowa',
-    'ID': 'Idaho',
-    'IL': 'Illinois',
-    'IN': 'Indiana',
-    'KS': 'Kansas',
-    'KY': 'Kentucky',
-    'LA': 'Louisiana',
-    'MA': 'Massachusetts',
-    'MD': 'Maryland',
-    'ME': 'Maine',
-    'MI': 'Michigan',
-    'MN': 'Minnesota',
-    'MO': 'Missouri',
-    'MP': 'Northern Mariana Islands',
-    'MS': 'Mississippi',
-    'MT': 'Montana',
-    'NA': 'National',
-    'NC': 'North Carolina',
-    'ND': 'North Dakota',
-    'NE': 'Nebraska',
-    'NH': 'New Hampshire',
-    'NJ': 'New Jersey',
-    'NM': 'New Mexico',
-    'NV': 'Nevada',
-    'NY': 'New York',
-    'OH': 'Ohio',
-    'OK': 'Oklahoma',
-    'OR': 'Oregon',
-    'PA': 'Pennsylvania',
-    'PR': 'Puerto Rico',
-    'RI': 'Rhode Island',
-    'SC': 'South Carolina',
-    'SD': 'South Dakota',
-    'TN': 'Tennessee',
-    'TX': 'Texas',
-    'UT': 'Utah',
-    'VA': 'Virginia',
-    'VI': 'Virgin Islands',
-    'VT': 'Vermont',
-    'WA': 'Washington',
-    'WI': 'Wisconsin',
-    'WV': 'West Virginia',
-    'WY': 'Wyoming'
-}
+    abbreviations = {v: k for k, v in states.items()}
 
-_abbreviations = {v: k for k, v in _states.items()}
+    @classmethod
+    def abbrev_lookup(cls, state_name: str) -> str:
+        """ State Abbreviation Lookup Utility
 
+        DocTests:
+        >>> StateLookup.abbrev_lookup('Texas')
+        'TX'
 
-def state_name_lookup(state_string: str, rev=False) -> str:
-    """ State Name Lookup Utility
+        @param state_name: the state name
+        @return string: abbreviation
+        """
+        return cls.abbreviations[state_name.title()]
 
-    DocTests:
-    >>> state_name_lookup('CA')
-    'California'
-    >>> state_name_lookup('Texas', rev=True)
-    'TX'
+    @classmethod
+    def name_lookup(cls, state_abbrev: str) -> str:
+        """ State Name Lookup Utility
 
-    @param state_string: state abbreviation or name if rev == True
-    @param rev: indicates a reverse lookup
-    @return string: state name or abbreviation if rev == True
-    """
-    if not rev and state_string in _states.keys():
-        return _states[state_string]
-    elif rev and state_string in _abbreviations.keys():
-        return _abbreviations[state_string]
-    else:
-        # raise KeyError
-        return "State Not Found"
+        DocTests:
+        >>> StateLookup.name_lookup('CA')
+        'California'
+
+        @param state_abbrev: state abbreviation
+        @return string: state name
+        """
+        return cls.states[state_abbrev.upper()]

@@ -3,4 +3,4 @@ import doctest
 
 
 if __name__ == '__main__':
-    doctest.testmod(LambdaData, verbose=True)
+    doctest.testmod(LambdaData, verbose=False)

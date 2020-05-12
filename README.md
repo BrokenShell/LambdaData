@@ -753,23 +753,43 @@ star_cat_col(...)
        @return: DataFrame
 
 ```
-### `LambdaData.state_name_lookup`
+### `LambdaData.StateLookup`
 ```
-Help on built-in function state_name_lookup in module LambdaData:
+Help on class StateLookup in module LambdaData:
 
-state_name_lookup(...)
-    state_name_lookup(unicode state_string: str, rev=False) -> str
-    State Name Lookup Utility
-    
-       DocTests:
-       >>> state_name_lookup('CA')
-       'California'
-       >>> state_name_lookup('Texas', rev=True)
-       'TX'
-    
-       @param state_string: state abbreviation or name if rev == True
-       @param rev: indicates a reverse lookup
-       @return string: state name or abbreviation if rev == True
+class StateLookup(builtins.object)
+ |  Class methods defined here:
+ |  
+ |  abbrev_lookup(state_name: 'unicode') -> 'unicode' from builtins.type
+ |      StateLookup.abbrev_lookup(cls, unicode state_name: str) -> str
+ |      State Abbreviation Lookup Utility
+ |      
+ |             DocTests:
+ |             >>> StateLookup.abbrev_lookup('Texas')
+ |             'TX'
+ |      
+ |             @param state_name: the state name
+ |             @return string: abbreviation
+ |  
+ |  name_lookup(state_abbrev: 'unicode') -> 'unicode' from builtins.type
+ |      StateLookup.name_lookup(cls, unicode state_abbrev: str) -> str
+ |      State Name Lookup Utility
+ |      
+ |             DocTests:
+ |             >>> StateLookup.name_lookup('CA')
+ |             'California'
+ |      
+ |             @param state_abbrev: state abbreviation
+ |             @return string: state name
+ |  
+ |  ----------------------------------------------------------------------
+ |  Data descriptors defined here:
+ |  
+ |  __dict__
+ |      dictionary for instance variables (if defined)
+ |  
+ |  __weakref__
+ |      list of weak references to the object (if defined)
 
 ```
 
