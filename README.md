@@ -51,7 +51,7 @@ LambdaData is a Python extension for high performance data engining.
     - value_span
     - star_cat_row
     - star_cat_col
-    - state_name_lookup
+    - StateLookup
 - Random Utilities (Fortuna)
     - random_range
     - shuffle: Knuth_B
