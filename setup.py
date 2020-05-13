@@ -33,8 +33,8 @@ setup(
     packages=["LambdaDataTests"],
     author="Robert Sharp",
     author_email="webmaster@sharpdesigndigital.com",
-    install_requires=["pandas"],
-    version="0.1.13",
+    install_requires=["pandas", "MonkeyScope"],
+    version="0.1.14",
     description="Data Science Iterator Algorithm Library",
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -55,7 +55,7 @@ setup(
         "star_product", "symmetric_difference", "transform", "transform_reduce",
         "transposed_sums", "union", "zip_transform", "matrix_multiply"
         "value_span", "star_cat_row", "star_cat_col", "random_range",
-        "shuffle", "TruffleShuffle", "state_name_lookup",
+        "shuffle", "TruffleShuffle", "StateLookup",
     ],
     python_requires=">=3.6",
 )
