@@ -540,7 +540,6 @@ def intersection(*args: set) -> set:
     """ Multiple Set Intersection
     Includes all elements that are common to every set passed in.
     If there is no intersection, it will return the empty set.
-    If all sets are the same, it will return the union of all sets.
     Opposite of symmetric_difference.
 
     DocTests:

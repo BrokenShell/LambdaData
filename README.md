@@ -3,7 +3,7 @@
 
 ## Lambda Data Science Iterator Utility Library
 
-LambdaData is a Python extension for high performance data engining.
+LambdaData is a Python extension for high performance data engineering.
 
 
 ### Coverage

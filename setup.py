@@ -23,7 +23,7 @@ setup(
             name="LambdaData",
             sources=["LambdaData.pyx"],
             language=["c++"],
-            extra_compile_args=["-std=gnu++17"],
+            extra_compile_args=["-std=c++17"],
         ),
         compiler_directives={
             "embedsignature": True,
@@ -34,7 +34,7 @@ setup(
     author="Robert Sharp",
     author_email="webmaster@sharpdesigndigital.com",
     install_requires=["pandas", "MonkeyScope"],
-    version="0.1.14",
+    version="0.1.16",
     description="Data Science Iterator Algorithm Library",
     long_description=long_description,
     long_description_content_type="text/markdown",
